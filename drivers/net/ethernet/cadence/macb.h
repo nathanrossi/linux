@@ -590,6 +590,7 @@ struct macb {
 
 	struct mii_bus		*mii_bus;
 	struct phy_device	*phy_dev;
+	struct device_node *phy_node;
 	unsigned int 		link;
 	unsigned int 		speed;
 	unsigned int 		duplex;
