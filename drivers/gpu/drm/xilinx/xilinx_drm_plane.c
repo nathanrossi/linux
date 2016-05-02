@@ -146,7 +146,8 @@ void xilinx_drm_plane_dpms(struct drm_plane *base_plane, int dpms)
 		}
 
 		/* start dma engine */
-		dma_async_issue_pending(plane->dma.chan);
+		/*dma_async_issue_pending(plane->dma.chan);*/
+		xilinx_drm_plane_commit(base_plane);
 
 		if (plane->rgb2yuv)
 			xilinx_rgb2yuv_enable(plane->rgb2yuv);
